@@ -9,8 +9,9 @@ A phased demonstration of Delay-Tolerant Networking using NASA JPL's ION impleme
 | Document | Source | PDF |
 |----------|--------|-----|
 | Executive Summary | `docs/executive-summary.md` | `docs/executive-summary.pdf` |
-| Requirements | `docs/requirements.md` | `docs/requirements.pdf` |
-| Design | `docs/design.md` | `docs/design.pdf` |
+| Requirements | `docs/requirements.md` | — |
+| Design | `docs/design.md` | — |
+| Tasks (overview) | `docs/tasks.md` | — |
 
 ## Prerequisites
 
@@ -115,31 +116,33 @@ VERSION=$(git describe --tags --always)
 ```
 .
 ├── README.md                          # This file
-├── ION-DTN -> ../ION-DTN              # Symlink to ION-DTN reference implementation (not in repo)
 └── docs/
-    ├── requirements.md                # Requirements document (34 requirements)
-    ├── requirements.pdf               # Generated PDF
-    ├── design.md                      # Design document (65 correctness properties)
-    ├── design.pdf                     # Generated PDF
     ├── executive-summary.md           # Executive summary for agencies/funders
     ├── executive-summary.pdf          # Generated PDF
+    ├── requirements.md                # Requirements document (34 requirements)
+    ├── design.md                      # Design document (65 correctness properties)
+    ├── tasks.md                       # Implementation plan overview and task index
     ├── figures/                       # Generated diagram images
     │   ├── figure1_phases.png
     │   ├── figure2_topology.png
     │   └── figure3_protocol_stack.png
-    ├── master/                        # Split: cross-cutting documents
+    ├── master/                        # Cross-cutting: CI/CD, integration, optional
     │   ├── requirements.md
     │   ├── design.md
-    │   └── executive-summary.md
-    ├── phase1-terrestrial/            # Split: Phase 1 documents
+    │   ├── executive-summary.md
+    │   └── tasks.md
+    ├── phase1-terrestrial/            # Phase 1: Terrestrial testbed
     │   ├── requirements.md
-    │   └── design.md
-    ├── phase2-cubesat/                # Split: Phase 2 documents
+    │   ├── design.md
+    │   └── tasks.md
+    ├── phase2-cubesat/                # Phase 2: CubeSat
     │   ├── requirements.md
-    │   └── design.md
-    └── phase3-cislunar/               # Split: Phase 3 documents
+    │   ├── design.md
+    │   └── tasks.md
+    └── phase3-cislunar/               # Phase 3: Cislunar payload
         ├── requirements.md
-        └── design.md
+        ├── design.md
+        └── tasks.md
 ```
 
 ## ION-DTN Reference Implementation
