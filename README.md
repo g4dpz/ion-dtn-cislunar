@@ -9,9 +9,9 @@ A phased demonstration of Delay-Tolerant Networking using NASA JPL's ION impleme
 | Document | Source | PDF |
 |----------|--------|-----|
 | Executive Summary | `docs/executive-summary.md` | `docs/executive-summary.pdf` |
-| Requirements | `docs/requirements.md` | — |
-| Design | `docs/design.md` | — |
-| Tasks (overview) | `docs/tasks.md` | — |
+| Requirements | `docs/requirements.md` | `docs/requirements.pdf` |
+| Design | `docs/design.md` | `docs/design.pdf` |
+| Tasks | `docs/tasks.md` | `docs/tasks.pdf` |
 
 ## Prerequisites
 
@@ -79,7 +79,7 @@ VERSION=$(git describe --tags --always 2>/dev/null || echo "untagged")
 DATE=$(date +"%B %Y")
 
 # Build all PDFs with version injected
-for doc in requirements design executive-summary; do
+for doc in requirements design executive-summary tasks; do
   pandoc docs/${doc}.md \
     -o docs/${doc}.pdf \
     --pdf-engine=xelatex \
@@ -120,29 +120,15 @@ VERSION=$(git describe --tags --always)
     ├── executive-summary.md           # Executive summary for agencies/funders
     ├── executive-summary.pdf          # Generated PDF
     ├── requirements.md                # Requirements document (34 requirements)
+    ├── requirements.pdf               # Generated PDF
     ├── design.md                      # Design document (65 correctness properties)
-    ├── tasks.md                       # Implementation plan overview and task index
-    ├── figures/                       # Generated diagram images
-    │   ├── figure1_phases.png
-    │   ├── figure2_topology.png
-    │   └── figure3_protocol_stack.png
-    ├── master/                        # Cross-cutting: CI/CD, integration, optional
-    │   ├── requirements.md
-    │   ├── design.md
-    │   ├── executive-summary.md
-    │   └── tasks.md
-    ├── phase1-terrestrial/            # Phase 1: Terrestrial testbed
-    │   ├── requirements.md
-    │   ├── design.md
-    │   └── tasks.md
-    ├── phase2-cubesat/                # Phase 2: CubeSat
-    │   ├── requirements.md
-    │   ├── design.md
-    │   └── tasks.md
-    └── phase3-cislunar/               # Phase 3: Cislunar payload
-        ├── requirements.md
-        ├── design.md
-        └── tasks.md
+    ├── design.pdf                     # Generated PDF
+    ├── tasks.md                       # Implementation tasks (37 tasks across all phases)
+    ├── tasks.pdf                      # Generated PDF
+    └── figures/                       # Generated diagram images
+        ├── figure1_phases.png
+        ├── figure2_topology.png
+        └── figure3_protocol_stack.png
 ```
 
 ## ION-DTN Reference Implementation
